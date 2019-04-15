@@ -14,6 +14,11 @@ ARTSController::ARTSController()
 void ARTSController::BeginPlay() 
 {
 	this->hud = Cast<ARTSHud>(GetHUD());
+
+	FInputModeGameAndUI InputMode;
+	InputMode.SetLockMouseToViewportBehavior(EMouseLockMode::LockAlways);
+	InputMode.SetHideCursorDuringCapture(false);
+	SetInputMode(InputMode);
 }
 
 void ARTSController::SetupInputComponent()
